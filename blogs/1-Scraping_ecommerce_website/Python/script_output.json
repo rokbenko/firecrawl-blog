@@ -1,0 +1,46 @@
+{
+  "title": "Hanes Men's Sweatshirt, EcoSmart Fleece Crewneck Sweatshirt, Big & Tall Available, 1 or 2-Pack",
+  "description": "This medium weight 7.8-oz fleece sweatshirt is made with up to 5% polyester created from recycled plastic, features a nice basic pullover style, and is available in multiple colors and sizes.",
+  "sku": "B01L8JJ57U",
+  "price": 9.2,
+  "discount": 56,
+  "averageRating": 4.6,
+  "reviewCount": 9111,
+  "reviews": [
+    {
+      "text": "Great sweatshirt! I ordered large to make it oversized and it fit well. I\u2019m usually a small -medium and 5\u20193 weighing 128.",
+      "rating": 5
+    },
+    {
+      "text": "Good quality and fit is perfect. Normally wear a medium but purchased size large. Medium would have been too tight after drying.",
+      "rating": 5
+    },
+    {
+      "text": "This sweatshirt is very comfortable, it fit me great and it was a reasonable price. Thank you Hanes!",
+      "rating": 5
+    },
+    {
+      "text": "Not super thick but just right for what you need. Unless you\u2019re looking to survive the Alaskan tundra then I recommend buying 4.",
+      "rating": 4
+    },
+    {
+      "text": "Would prefer it to be thicker but at this price point, I really can\u2019t complain. It's a decent fleece sweatshirt that'll provide some warmth.",
+      "rating": 4
+    }
+  ],
+  "availability": "In Stock",
+  "stockLevel": 50,
+  "category": "Clothing, Shoes & Jewelry",
+  "taxonomy": ["Clothing", "Men's Fashion"],
+  "seller": {
+    "name": "Amazon.com",
+    "rating": 4.5,
+    "other": "Top Rated Seller"
+  },
+  "productDetails": {
+    "asin": "B01L8JJ57U",
+    "manufacturer": "Hanes Men's Athletic",
+    "itemModelNumber": "AMZ9",
+    "packageDimensions": "15.1 x 11.7 x 4.6 inches; 1.54 Pounds"
+  }
+}

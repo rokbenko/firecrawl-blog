@@ -1,0 +1,74 @@
+{
+  "name": "Scraping E-commerce Websites with Firecrawl",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "ee133051-ab34-40ab-889c-154792dd4dd7",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [2112, 96]
+    },
+    {
+      "parameters": {
+        "operation": "scrape",
+        "url": "https://www.amazon.com/Hanes-Ecosmart-Fleece-Sweatshirt-Black/dp/B01L8JJ57U",
+        "scrapeOptions": {
+          "options": {
+            "formats": {
+              "format": [
+                {
+                  "type": "json",
+                  "prompt": "Extract the product details from the page content. Focus on the main product information, pricing, reviews, and other requested fields. If a field is not found, omit it or use null. For reviews, extract a sample if many are present.",
+                  "schema": "{\n        \"type\": \"object\",\n        \"properties\": {\n            \"title\": {\"type\": \"string\", \"description\": \"The product title.\"},\n            \"description\": {\n                \"type\": \"string\",\n                \"description\": \"The product description.\"\n            },\n            \"sku\": {\"type\": \"string\", \"description\": \"The product SKU or identifier.\"},\n            \"price\": {\n                \"type\": \"number\",\n                \"description\": \"The current price of the product.\"\n            },\n            \"discount\": {\n                \"type\": \"number\",\n                \"description\": \"Discount amount or percentage if applicable.\"\n            },\n            \"averageRating\": {\n                \"type\": \"number\",\n                \"description\": \"Average customer rating.\"\n            },\n            \"reviewCount\": {\n                \"type\": \"integer\",\n                \"description\": \"Number of customer reviews.\"\n            },\n            \"reviews\": {\n                \"type\": \"array\",\n                \"description\": \"List of customer reviews (limit to top 5-10 if many).\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"text\": {\"type\": \"string\"},\n                        \"rating\": {\"type\": \"number\"}\n                    }\n                }\n            },\n            \"availability\": {\n                \"type\": \"string\",\n                \"description\": \"Availability status (e.g., 'In Stock', 'Out of Stock').\"\n            },\n            \"stockLevel\": {\n                \"type\": \"integer\",\n                \"description\": \"Stock quantity if available.\"\n            },\n            \"category\": {\"type\": \"string\", \"description\": \"Product category.\"},\n            \"taxonomy\": {\n                \"type\": \"array\",\n                \"description\": \"Product taxonomy or breadcrumb hierarchy.\",\n                \"items\": {\"type\": \"string\"}\n            },\n            \"seller\": {\n                \"type\": \"object\",\n                \"description\": \"Seller information for marketplaces.\",\n                \"properties\": {\n                    \"name\": {\"type\": \"string\"},\n                    \"rating\": {\"type\": \"number\"},\n                    \"other\": {\"type\": \"string\"}\n                }\n            },\n            \"productDetails\": {\n                \"type\": \"object\",\n                \"description\": \"Additional product details.\",\n                \"properties\": {\n                    \"asin\": {\"type\": \"string\", \"description\": \"ASIN code.\"},\n                    \"manufacturer\": {\n                        \"type\": \"string\",\n                        \"description\": \"Manufacturer name.\"\n                    },\n                    \"itemModelNumber\": {\n                        \"type\": \"string\",\n                        \"description\": \"Item model number.\"\n                    },\n                    \"packageDimensions\": {\n                        \"type\": \"string\",\n                        \"description\": \"Package dimensions and weight.\"\n                    }\n                }\n            }\n        },\n        \"required\": [\"title\", \"price\"]\n    }"
+                }
+              ]
+            },
+            "headers": {}
+          }
+        },
+        "requestOptions": {}
+      },
+      "type": "@mendable/n8n-nodes-firecrawl.firecrawl",
+      "typeVersion": 1,
+      "position": [2576, 96],
+      "id": "540fc428-475c-488e-9f8f-7294371f63fb",
+      "name": "Scrape E-commerce Website with Firecrawl",
+      "credentials": {
+        "firecrawlApi": {
+          "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+          "name": "Firecrawl account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Scrape E-commerce Website with Firecrawl",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false,
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "executionTimeout": -1
+  },
+  "versionId": "2b483d53-1423-4546-8d4a-262378af7d51",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "099a5120ad94e00b7ca71a0d5806a08dfa388dde4fbc9c46f0e512faffab3661"
+  },
+  "id": "OisOxSxLQ1gR7TI5",
+  "tags": []
+}
